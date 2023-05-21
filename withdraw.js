@@ -7,6 +7,11 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const withdrawValueString = inputWithdraw.value;
     const withdrawValue = parseFloat(withdrawValueString) ;
 
+    if(isNaN(withdrawValue)){
+        alert("PLease Input A Number");
+        return;
+    }
+
     // console.log(inputWithdraw);
     // Step-3 : Get the current withdraw total
     // For non input (element other than input , text area) use innerText to get the text
@@ -24,7 +29,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const finalBalanceAdd = finalBalanceCalculate - withdrawValue;
       // Step-4 : Clear the deposite field.....
       inputWithdraw.value = "";
-      
+
     if(withdrawValue > finalBalanceCalculate){
         alert("Sorry Insufficient Amount");
             return;
