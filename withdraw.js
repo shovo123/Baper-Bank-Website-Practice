@@ -7,6 +7,9 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const withdrawValueString = inputWithdraw.value;
     const withdrawValue = parseFloat(withdrawValueString) ;
 
+     // Step-4 : Clear the deposite field.....
+     inputWithdraw.value = "";
+     
     if(isNaN(withdrawValue)){
         alert("PLease Input A Number");
         return;
@@ -27,8 +30,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const finalBalanceCalculate = parseFloat(finalBalanceString);
 
     const finalBalanceAdd = finalBalanceCalculate - withdrawValue;
-      // Step-4 : Clear the deposite field.....
-      inputWithdraw.value = "";
+     
 
     if(withdrawValue > finalBalanceCalculate){
         alert("Sorry Insufficient Amount");

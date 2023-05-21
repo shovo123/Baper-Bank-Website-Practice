@@ -4,7 +4,11 @@ document.getElementById('btn-deposite').addEventListener('click', function(){
     // Always remember to use  .value to get text from an input field...
     const depositeField = document.getElementById('input-deposite');
     const newDepositeAmountString = depositeField.value;
-    const newDepositeAmount = parseFloat(newDepositeAmountString)
+    const newDepositeAmount = parseFloat(newDepositeAmountString);
+
+    // Step-7 : Clear the deposite field.....
+    depositeField.value = '';
+    
     if(isNaN(newDepositeAmount)){
         alert("PLease Input A Number");
         return;
@@ -27,7 +31,6 @@ document.getElementById('btn-deposite').addEventListener('click', function(){
     // Step-6 : Calculate Current Total Balance
     const balanceTotal = newDepositeAmount + previousbalanceAdd;
     balanceAdd.innerText = balanceTotal;
-    // Step-7 : Clear the deposite field.....
-    depositeField.value = '';
+    
 
 })
