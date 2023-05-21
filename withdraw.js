@@ -15,18 +15,25 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     // withdrawTotal.innerText = withdrawValue;
     const withdrawTotalElementString = withdrawTotal.innerText;
     const withdrawTotalElement = parseFloat(withdrawTotalElementString);
-    const withdrawTotalAmount = withdrawValue + withdrawTotalElement;
-    withdrawTotal.innerText = withdrawTotalAmount;
+  
 
     const finalBalance = document.getElementById('balance');
     const finalBalanceString = finalBalance.innerText;
     const finalBalanceCalculate = parseFloat(finalBalanceString);
 
     const finalBalanceAdd = finalBalanceCalculate - withdrawValue;
+      // Step-4 : Clear the deposite field.....
+      inputWithdraw.value = "";
+      
+    if(withdrawValue > finalBalanceCalculate){
+        alert("Sorry Insufficient Amount");
+            return;
+    }
+    const withdrawTotalAmount = withdrawValue + withdrawTotalElement;
+    withdrawTotal.innerText = withdrawTotalAmount;
     finalBalance.innerText = finalBalanceAdd;
 
     
 
-    // Step-4 : Clear the deposite field.....
-    inputWithdraw.value = "";
+  
 })
